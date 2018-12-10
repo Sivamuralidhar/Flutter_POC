@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
  static String login='Login';
  static String dealshour ='Deals hour';
  static String mydeals ='My Deals';
+ static String dashboard ='Dashboard';
  static String restaurantslist ='Restaurants List';
  static String accountsettings ='Account Settings';
  static String signintodealshour ='Sign In To Deals Hour';
