@@ -38,8 +38,9 @@ class MyCustomFormState extends State<MyCustomForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextFormField(
+            keyboardType: TextInputType.phone,
      autofocus: true,
-     decoration: InputDecoration(hintText: Appconstants.enterphonenumber),
+     decoration: InputDecoration(hintText: Appconstants.enterotp),
             validator: (value) {
               if (value.isEmpty) {
                 return ErrorMessages.enterotp;

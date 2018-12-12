@@ -2,35 +2,36 @@ import 'package:flutter/material.dart';
 import 'constants/appconstants.dart';
 import 'pages/MyAccount.dart' as myaccount;
 import 'pages/MyDeals.dart' as mydeals;
+import 'pages/TestListview.dart' as tlview;
 import 'pages/RestaurantsList.dart' as restaurantslist;
-
 
 void main() => runApp(TabsMenu());
 
-class TabsMenu extends StatelessWidget{
+class TabsMenu extends StatelessWidget {
 
-@override
+  static double width=0;
+  static double height=0;
+  @override
   Widget build(BuildContext context) {
+    //  width = MediaQuery.of(context).size.width;
+    //  height = MediaQuery.of(context).size.height;
     return MaterialApp(
       home: DefaultTabController(
-        
         length: 3,
         child: Scaffold(
-        //   appBar: AppBar(
-        //     // Color CustomRed = Color.FromRgb(235, 76, 61);
-        // backgroundColor: Color.fromRGBO(235, 76, 61, 1),
-        // // backgroundColor: Colors.white,
-        //     title: Text(Appconstants.hometitle),
-        //   ),
+          //   appBar: AppBar(
+          //  Color CustomRed = Color.FromRgb(235, 76, 61);
+          // backgroundColor: Color.fromRGBO(235, 76, 61, 1),
+          // // backgroundColor: Colors.white,
+          //     title: Text(Appconstants.hometitle),
+          //   ),
           bottomNavigationBar: menu(),
           body: TabBarView(
             children: [
               new restaurantslist.RestaurantsList(),
-              new mydeals.MyDeals(),
+              // new mydeals.MyDeals(),
+              new tlview.TestListview(),
               new myaccount.MyAccount(),
-              // Icon(Icons.directions_car),
-              // Icon(Icons.directions_transit),
-              // Icon(Icons.directions_bike),
             ],
           ),
         ),
@@ -39,35 +40,47 @@ class TabsMenu extends StatelessWidget{
   }
 }
 
- Widget menu() {
-return Container(
-  color: Color.fromRGBO(235, 76, 61, 1),
-  child: TabBar(
-    labelColor: Colors.white,
-    unselectedLabelColor: Colors.white70,
-    indicatorSize: TabBarIndicatorSize.tab,
-    indicatorPadding: EdgeInsets.all(5.0),
-    indicatorColor: Colors.white,
-    tabs: [
-      Tab(
-        icon: Icon(Icons.restaurant_menu, size: 35,),
-        
-      ),
-      Tab(
-        icon: Icon(Icons.local_offer, size: 35,),
-      ),
-      Tab(
-        icon: Icon(Icons.account_circle, size: 35,),
-      ),
-    ],
-  ),
-);
-} 
+Widget menu() {
+  double size = 28;
+  return Container(
+    color: Color.fromRGBO(235, 76, 61, 1),
+    child: TabBar(
+      labelColor: Colors.white,
+      unselectedLabelColor: Colors.white70,
+      indicatorSize: TabBarIndicatorSize.tab,
+      indicatorPadding: EdgeInsets.all(5.0),
+      indicatorColor: Colors.white,
+      tabs: [
+        new Container(
+          // height: Sizes.Headerheight,
+          child: Tab(
+            icon: Icon(
+              Icons.restaurant_menu,
+              size: size,
+            ),
+          ),
+        ),
+        Tab(
+          icon: Icon(
+            Icons.local_offer,
+            size: size,
+          ),
+        ),
+        Tab(
+          icon: Icon(
+            Icons.account_circle,
+            size: size,
+          ),
+        ),
+      ],
+    ),
+  );
+}
 
 // -----------------------------------
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -155,7 +168,6 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,

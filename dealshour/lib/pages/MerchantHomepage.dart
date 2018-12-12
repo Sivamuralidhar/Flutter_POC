@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:dealshour/constants/appconstants.dart';
 
-class MerchantHomepage extends StatelessWidget{
-   final appTitle = Appconstants.dashboard;
-@override
+class MerchantHomepage extends StatelessWidget {
+  final appTitle = Appconstants.dashboard;
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: appTitle,
-      
       home: MyHomePage(title: appTitle),
     );
   }
@@ -15,16 +14,15 @@ class MerchantHomepage extends StatelessWidget{
 
 class MyHomePage extends StatelessWidget {
   final String title;
-
   MyHomePage({Key key, this.title}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-      title: Text(title),
-      centerTitle: true, 
-      backgroundColor: Colorconstants.appred,),
+        title: Text(title),
+        centerTitle: true,
+        backgroundColor: Colorconstants.appred,
+      ),
       body: Center(child: Text('My Page!')),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
@@ -64,4 +62,3 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
-
